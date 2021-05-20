@@ -80,7 +80,6 @@ impl FromStr for HeaderValue {
     ///
     /// This checks it's valid ASCII.
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        crate::ensure!(s.is_ascii(), "String slice should be valid ASCII");
         Ok(Self {
             inner: String::from(s),
         })
